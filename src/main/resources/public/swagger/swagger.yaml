@@ -1,0 +1,103 @@
+openapi: '3.0.3'
+info:
+  title: conta-azul-robot
+  version: 0.0.1
+  description: Mars robot API
+servers:
+  - url: 'http://localhost:8080'
+tags:
+  - name: Robot
+    description: Resources of Mars Robot.
+paths:
+  /robot/{id}:
+    get:
+      tags:
+        - Robot
+      summary: Get robot coordinates by id
+      parameters:
+        - name: id
+          in: path
+          description: Robot identifier
+          required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RobotPositionResponse'
+        '400':
+          description: Bad request. Invalid request parameters.
+        '404':
+          description: The robot with this identifier does not exists.
+        '500':
+          description: Internal server error.
+  /robot/{id}/move-to:
+    patch:
+      tags:
+        - Robot
+      summary: Send a command to robot moves
+      parameters:
+        - name: id
+          in: path
+          description: Robot identifier
+          required: true
+        - name: command
+          in: query
+          description: | 
+            Command to robot. It can be:
+            * 'M' moves forward.
+            * 'R' turns right.
+            * 'L' turns left.
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request. Invalid request parameters.
+        '404':
+          description: The robot with this identifier does not exists.
+        '500':
+          description: Internal server error.
+  /robot/{id}/picture:
+    get:
+      tags:
+        - Robot
+      summary: Get a pícture taken by robot.
+      parameters:
+        - name: id
+          in: path
+          description: Robot identifier
+          required: true
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request. Invalid request parameters.
+        '404':
+          description: The robot with this identifier does not exists.
+        '500':
+          description: Internal server error.
+components:
+  schemas:
+    RobotPositionResponse:
+      type: object
+      properties:
+        x:
+          type: number
+          example: 1
+          description: X position of robot.
+        y:
+          type: number
+          example: 3
+          description: Y position of robot.
+        orientation:
+          $ref: '#/components/schemas/OrientationResponse'
+    OrientationResponse:
+      type: string
+      example: 'W'
+      description: | 
+        Robot's orientation. It can be:
+        * 'N' as North.
+        * 'S' as South.
+        * 'E' as East.
+        * 'W' as West.
