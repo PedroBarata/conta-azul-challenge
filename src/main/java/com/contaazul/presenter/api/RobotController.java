@@ -11,17 +11,32 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Objects;
+
 @RestController
 @RequestMapping(value = "/robot", produces = MediaType.APPLICATION_JSON_VALUE)
 public class RobotController {
-	@Autowired
-	private GetRobotPositionQueryHandler getRobotPositionQueryHandler;
 
-	@Autowired
-	private MoveRobotCommandHandler moveRobotCommandHandler;
+	private final GetRobotPositionQueryHandler getRobotPositionQueryHandler;
 
-	@Autowired
-	private TakePictureQueryHandler takePictureQueryHandler;
+	private final MoveRobotCommandHandler moveRobotCommandHandler;
+
+	private final TakePictureQueryHandler takePictureQueryHandler;
+
+	public RobotController(
+			GetRobotPositionQueryHandler getRobotPositionQueryHandler,
+			MoveRobotCommandHandler moveRobotCommandHandler,
+			TakePictureQueryHandler takePictureQueryHandler
+	) {
+		Objects.requireNonNull(getRobotPositionQueryHandler);
+		Objects.requireNonNull(moveRobotCommandHandler);
+		Objects.requireNonNull(takePictureQueryHandler);
+
+		this.getRobotPositionQueryHandler = getRobotPositionQueryHandler;
+		this.moveRobotCommandHandler = moveRobotCommandHandler;
+		this.takePictureQueryHandler = takePictureQueryHandler;
+	}
+
 
 	@GetMapping("{robotId}")
 	public ResponseEntity<PositionResponse> getRobotPosition(@PathVariable(name = "robotId") Long robotId) {
@@ -46,7 +61,7 @@ public class RobotController {
 
 	@PatchMapping("{robotId}/move-to")
 	public ResponseEntity<?> moveRobot(@PathVariable(name = "robotId") Long robotId,
-									   @RequestParam(name = "command", defaultValue = "L") String command) {
+									   @RequestParam(name = "command", required = true) String command) {
 
 		try {
 			MoveRobotCommand cmd = new MoveRobotCommand(robotId, command);

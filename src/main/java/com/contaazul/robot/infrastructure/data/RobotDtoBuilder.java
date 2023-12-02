@@ -14,7 +14,6 @@ public class RobotDtoBuilder {
 		return this;
 	}
 
-
 	public RobotDtoBuilder withXPosition(Integer x) {
 		this.x = x;
 		return this;

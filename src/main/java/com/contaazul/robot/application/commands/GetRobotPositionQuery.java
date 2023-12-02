@@ -5,7 +5,7 @@ import com.contaazul.presenter.api.response.PositionResponse;
 
 public class GetRobotPositionQuery implements Query<PositionResponse> {
 
-	private Long robotId;
+	private final Long robotId;
 
 	public GetRobotPositionQuery(Long robotId) {
 		this.robotId = robotId;

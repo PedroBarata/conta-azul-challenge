@@ -1,5 +1,7 @@
 package com.contaazul.robot.domain.orientation;
 
+import com.contaazul.common.exception.ConverterException;
+
 import java.util.Arrays;
 
 public enum OrientationEnum {
@@ -19,7 +21,7 @@ public enum OrientationEnum {
 		return Arrays.stream(OrientationEnum.values())
 				.filter(coordinatesEnum -> coordinatesEnum.orientationKey.equals(key))
 				.findFirst()
-				.orElseThrow(() -> new RuntimeException("Not found this orientation key: " + key));
+				.orElseThrow(() -> new ConverterException("Not found this orientation key: " + key));
 	}
 
 	public String getCoordinationKey() {

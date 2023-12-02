@@ -16,15 +16,8 @@ public class MoveRobotCommand implements Command {
 		return robotId;
 	}
 
-	public void setRobotId(Long robotId) {
-		this.robotId = robotId;
-	}
-
 	public String getCommand() {
 		return command;
 	}
 
-	public void setCommand(String command) {
-		this.command = command;
-	}
 }

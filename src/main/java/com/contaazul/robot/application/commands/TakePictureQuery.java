@@ -5,7 +5,7 @@ import com.contaazul.common.presenter.Query;
 
 public class TakePictureQuery implements Query<byte[]> {
 
-	private Long robotId;
+	private final Long robotId;
 
 	public TakePictureQuery(Long robotId) {
 		this.robotId = robotId;
@@ -15,7 +15,4 @@ public class TakePictureQuery implements Query<byte[]> {
 		return robotId;
 	}
 
-	public void setRobotId(Long robotId) {
-		this.robotId = robotId;
-	}
 }

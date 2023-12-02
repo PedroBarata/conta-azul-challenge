@@ -38,7 +38,7 @@ public class Position {
 	}
 
 	public void removeY() {
-		y = y + 1;
+		y = y - 1;
 	}
 
 	public void turnLeft() {

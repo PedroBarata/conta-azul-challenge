@@ -10,11 +10,17 @@ import com.contaazul.robot.infrastructure.data.RobotRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Objects;
+
 @Service
 public class GetRobotPositionQueryHandler implements QueryHandler<GetRobotPositionQuery, PositionResponse> {
 
-	@Autowired
-	private RobotRepository repository;
+	private final RobotRepository repository;
+
+	public GetRobotPositionQueryHandler(RobotRepository repository) {
+		Objects.requireNonNull(repository);
+		this.repository = repository;
+	}
 
 	@Override
 	public PositionResponse handle(GetRobotPositionQuery cmd) {
