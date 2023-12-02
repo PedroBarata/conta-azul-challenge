@@ -5,8 +5,8 @@ import com.contaazul.robot.domain.orientation.OrientationEnum;
 import com.contaazul.robot.infrastructure.data.RobotDto;
 import com.contaazul.robot.infrastructure.data.RobotDtoBuilder;
 import com.contaazul.robot.infrastructure.data.RobotRepository;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
@@ -27,9 +27,9 @@ public class TakePictureQueryHandlerTest {
 	private TakePictureQueryHandler handler;
 
 
-	@BeforeEach
+	@Before
 	public void setUp() {
-		MockitoAnnotations.initMocks(this);
+		MockitoAnnotations.openMocks(this);
 		handler = new TakePictureQueryHandler(repository);
 	}
 

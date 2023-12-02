@@ -6,15 +6,13 @@ import com.contaazul.robot.domain.orientation.OrientationEnum;
 import com.contaazul.robot.infrastructure.data.RobotDto;
 import com.contaazul.robot.infrastructure.data.RobotDtoBuilder;
 import com.contaazul.robot.infrastructure.data.RobotRepository;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Optional;
 
@@ -31,9 +29,9 @@ public class GetRobotPositionQueryHandlerTest {
 	private GetRobotPositionQueryHandler handler;
 
 
-	@BeforeEach
+	@Before
 	public void setUp() {
-		MockitoAnnotations.initMocks(this);
+		MockitoAnnotations.openMocks(this);
 		handler = new GetRobotPositionQueryHandler(repository);
 	}
 

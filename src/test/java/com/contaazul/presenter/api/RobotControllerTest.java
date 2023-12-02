@@ -8,8 +8,10 @@ import com.contaazul.presenter.api.response.PositionResponseBuilder;
 import com.contaazul.robot.application.commands.GetRobotPositionQueryHandler;
 import com.contaazul.robot.application.commands.MoveRobotCommandHandler;
 import com.contaazul.robot.application.commands.TakePictureQueryHandler;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
@@ -34,9 +36,9 @@ public class RobotControllerTest {
 	@Mock
 	private TakePictureQueryHandler takePictureQueryHandler;
 
-	@BeforeEach
-	public void setUp() {
-		MockitoAnnotations.initMocks(this);
+	@Before
+	public void beforeEach() {
+		MockitoAnnotations.openMocks(this);
 		controller = new RobotController(
 				getRobotPositionQueryHandler,
 				moveRobotCommandHandler,
