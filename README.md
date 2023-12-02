@@ -6,7 +6,7 @@ Tem como objetivo controlar robôs em Marte a partir de requisições HTTP.
 
 O robô funciona em um plano horizontal, da seguinte maneira:
 
-![img.png](img.png)
+![img.png](src/main/resources/static/img.png)
 
 O banco de dados é incializado em memória (h2), onde são criados 3 robôs na base de dados no momento 
 em que a aplicação sobe:
@@ -69,12 +69,12 @@ $ ./mvnw test
 
 C1:
 
-![img_1.png](img_1.png)
+![img_1.png](src/main/resources/static/img_1.png)
 
 C2:
 
-![img_2.png](img_2.png)
+![img_2.png](src/main/resources/static/img_2.png)
 
 C3: 
 
-![img_3.png](img_3.png)
+![img_4.png](src/main/resources/static/img_4.png)
