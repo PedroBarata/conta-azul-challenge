@@ -49,7 +49,13 @@ public class RobotController {
 			log.info("Starting getRobotPosition resource...");
 			GetRobotPositionQuery cmd = new GetRobotPositionQuery(robotId);
 			PositionResponse response = getRobotPositionQueryHandler.handle(cmd);
-			log.info("GetRobotPosition done!. Position = {}", response);
+			log.info("GetRobotPosition done!. " +
+							"Position = x_position: {}, " +
+							"y_position: {}, " +
+							"orientation: {}",
+					response.getX(),
+					response.getY(),
+					response.getOrientation());
 
 			return ResponseEntity
 					.ok()

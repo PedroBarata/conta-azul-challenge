@@ -64,7 +64,7 @@ $ docker run -p 8080:8080 conta-azul-challenge
 ````
 
 ## Banco de dados
-Para acessar o banco em memória, basta acessar a url `http://localhost:8080/api/v1/h2-console/` e os seguintes parâmetros:
+Para acessar o banco em memória, basta acessar a url local `http://localhost:8080/api/v1/h2-console/` ou a url do Render `https://conta-azul-challenge.onrender.com/api/v1/h2-console/` e os seguintes parâmetros:
 
 ```
 Driver Classs: org.h2.Driver
@@ -74,7 +74,7 @@ Password: robot
 ```
 
 
-A aplicação possui um [Swagger](https://swagger.io/) no endereço `http://localhost:8080/api/v1/swagger/index.html`, 
+A aplicação possui um [Swagger](https://swagger.io/) no endereço local `http://localhost:8080/api/v1/swagger/index.html` ou no Render https://conta-azul-challenge.onrender.com/api/v1/swagger/index.html, 
 onde existem os _endpoints_ e suas respectivas documentações. Além disso, dentro do projeto, na pasta `src.postman` 
 existe uma _collection_ do postman também.
 
