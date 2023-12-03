@@ -2,9 +2,10 @@ openapi: '3.0.3'
 info:
   title: conta-azul-robot
   version: 0.0.1
-  description: Mars robot API
+  description: Mars robot API of Conta Azul Challenge
 servers:
   - url: 'http://localhost:8080/api/v1'
+  - url: 'https://conta-azul-challenge.onrender.com/api/v1/'
 tags:
   - name: Robot
     description: Resources of Mars Robot.

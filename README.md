@@ -34,13 +34,34 @@ O sistema foi feito com base no Java 17+ e framework Spring boot.
 
 # Uso
 
+## Executando remotamente
+
+O serviço foi hospedado num _cloud hosting_ chamado Render. A Url de acesso é:
+https://conta-azul-challenge.onrender.com/api/v1/ na qual abrirá a documentação do _Swagger_ como página inicial.
+
+Para executar os recursos do serviço no _cloud hosting_, basta alterar o Server para utilizar o Render (`https://conta-azul-challenge.onrender.com/api/v1`).
+
 ## Executando localmente
 
-Para executar o projeto localmente, pode-se subi-la em sua IDE favorita ou pelo comando:
+Para executar o projeto localmente, pode-se subi-lo em sua IDE favorita ou pelo comando:
 
 ```
-$ ./mvnw spring-boot:run
+$ ./mvnw && spring-boot:run
 ```
+
+Ou pode-se executar via Docker.
+
+Para buildar o projeto:
+
+````
+$ docker build -t conta-azul-challenge .      
+````
+
+Para executar a imagem gerada no Docker:
+
+````
+$ docker run -p 8080:8080 conta-azul-challenge
+````
 
 ## Banco de dados
 Para acessar o banco em memória, basta acessar a url `http://localhost:8080/api/v1/h2-console/` e os seguintes parâmetros:
@@ -64,6 +85,14 @@ Para rodar a suíte de testes, execute:
 ```
 $ ./mvnw test
 ```
+
+# _Troubleshooting_
+
+* Caso ocorra erro de permissão com a execução de comandos `./mvnw`, dê a permissão de execução, com:
+
+````
+$ chmod +x mvnw
+````
 
 # Modelo C4
 
