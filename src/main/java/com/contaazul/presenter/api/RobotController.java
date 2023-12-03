@@ -6,7 +6,6 @@ import com.contaazul.common.exception.ConverterException;
 import com.contaazul.common.exception.NotFoundException;
 import com.contaazul.presenter.api.response.PositionResponse;
 import com.contaazul.robot.application.commands.*;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Objects;
 
 @RestController
-@RequestMapping(value = "/robot", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/robots", produces = MediaType.APPLICATION_JSON_VALUE)
 public class RobotController {
 
 	private final GetRobotPositionQueryHandler getRobotPositionQueryHandler;

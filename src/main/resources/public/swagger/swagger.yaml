@@ -4,12 +4,12 @@ info:
   version: 0.0.1
   description: Mars robot API
 servers:
-  - url: 'http://localhost:8080'
+  - url: 'http://localhost:8080/api/v1'
 tags:
   - name: Robot
     description: Resources of Mars Robot.
 paths:
-  /robot/{id}:
+  /robots/{id}:
     get:
       tags:
         - Robot
@@ -32,7 +32,7 @@ paths:
           description: The robot with this identifier does not exists.
         '500':
           description: Internal server error.
-  /robot/{id}/move-to:
+  /robots/{id}/move-to:
     patch:
       tags:
         - Robot
@@ -58,7 +58,7 @@ paths:
           description: The robot with this identifier does not exists.
         '500':
           description: Internal server error.
-  /robot/{id}/picture:
+  /robots/{id}/picture:
     get:
       tags:
         - Robot

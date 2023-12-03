@@ -43,7 +43,7 @@ $ ./mvnw spring-boot:run
 ```
 
 ## Banco de dados
-Para acessar o banco em memória, basta acessar a url `http://localhost:8080/h2-console/` e os seguintes parâmetros:
+Para acessar o banco em memória, basta acessar a url `http://localhost:8080/api/v1/h2-console/` e os seguintes parâmetros:
 
 ```
 Driver Classs: org.h2.Driver
@@ -53,7 +53,7 @@ Password: robot
 ```
 
 
-A aplicação possui um [Swagger](https://swagger.io/) no endereço `http://localhost:8080/swagger/index.html`, 
+A aplicação possui um [Swagger](https://swagger.io/) no endereço `http://localhost:8080/api/v1/swagger/index.html`, 
 onde existem os _endpoints_ e suas respectivas documentações. Além disso, dentro do projeto, na pasta `src.postman` 
 existe uma _collection_ do postman também.
 

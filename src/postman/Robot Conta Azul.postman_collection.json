@@ -12,21 +12,23 @@
 				"method": "PATCH",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/robot/:id/move-to?command=L",
+					"raw": "http://localhost:8080/api/v1/robots/:id/move-to?command=M",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"robot",
+						"api",
+						"v1",
+						"robots",
 						":id",
 						"move-to"
 					],
 					"query": [
 						{
 							"key": "command",
-							"value": "L"
+							"value": "M"
 						}
 					],
 					"variable": [
@@ -45,14 +47,16 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/robot/:id",
+					"raw": "http://localhost:8080/api/v1/robots/:id",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"robot",
+						"api",
+						"v1",
+						"robots",
 						":id"
 					],
 					"variable": [
@@ -71,14 +75,16 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/robot/:id/picture",
+					"raw": "http://localhost:8080/api/v1/robots/:id/picture",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"robot",
+						"api",
+						"v1",
+						"robots",
 						":id",
 						"picture"
 					],
